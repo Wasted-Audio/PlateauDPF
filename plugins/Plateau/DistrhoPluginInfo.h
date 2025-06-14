@@ -1,8 +1,11 @@
 #ifndef DISTRHO_PLUGIN_INFO_H_INCLUDED
 #define DISTRHO_PLUGIN_INFO_H_INCLUDED
 
+#define DISTRHO_PLUGIN_BRAND "Dartspark"
 #define DISTRHO_PLUGIN_NAME  "Plateau"
+#define DISTRHO_PLUGIN_LABEL  "Plateau"
 #define DISTRHO_PLUGIN_URI   "https://dartspark.bandcamp.com"
+#define DISTRHO_PLUGIN_CLAP_ID "dartspark.plateau"
 
 //DSP
 #define DISTRHO_PLUGIN_NUM_INPUTS   2
@@ -16,8 +19,8 @@
 #define DISTRHO_UI_USE_NANOVG 0
 
 //AU
+#define DISTRHO_PLUGIN_AU_TYPE aumf
 #define DISTRHO_PLUGIN_BRAND_ID Vlly
 #define DISTRHO_PLUGIN_UNIQUE_ID pltu
-#define DISTRHO_PLUGIN_CLAP_ID "pltu"
 
 #endif

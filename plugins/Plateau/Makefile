@@ -5,6 +5,7 @@
 #
 # Modified by REIS0
 # Modified by lamech
+# Modified by dreamer
 
 # --------------------------------------------------------------
 # Project name, used for binaries
@@ -26,16 +27,13 @@ UI_TYPE = cairo
 include ../../dpf/Makefile.plugins.mk
 
 # --------------------------------------------------------------
-# VST3 target
+# PLugin targets
 
+TARGETS += vst2
 TARGETS += vst3
-
-# --------------------------------------------------------------
-# AU target
-
-ifeq ($(MACOS),true)
+TARGETS += lv2_sep
+TARGETS += clap
 TARGETS += au
-endif
 
 check:
 	@echo "Building targets: $(TARGETS)"
@@ -44,9 +42,3 @@ all: check $(TARGETS)
 
 art: # Converts the artwork to a header file
 	python ../../dpf/utils/png2rgba.py PlateauArtwork artwork
-
-apply: # Copies the VST3 file to the specified directory
-	cp ../../bin/Plateau.vst3/Contents/x86_64-win/Plateau.vst3 "C:\Program Files\Common Files\VST3"
-
-install-au: # Install AU
-	sudo rm -rf /Library/Audio/Plug-Ins/Components/Plateau.component && sudo cp -R ../../bin/Plateau.component /Library/Audio/Plug-Ins/Components
